@@ -29,7 +29,7 @@ COPY go.mod go.sum .air.toml ./
 RUN go mod download && go mod verify
 
 COPY *.go ./
-RUN go build -o /aclservice
+RUN go build -o ./aclservice
 
 FROM alpine:latest AS prod
 
