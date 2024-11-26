@@ -6,7 +6,7 @@ services:
       context: .
       target: dev
     environment:
-      GB_CONSTRING: "mongodb://userdb"
+      GB_CONSTRING: "mongodb://acldb"
     ports:
       - "8081:8080"
       - "2345:2345"

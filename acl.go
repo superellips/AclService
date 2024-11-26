@@ -45,21 +45,21 @@ func GetAclsByGuestbookId(c *gin.Context) {
 
 func PostAcl(c *gin.Context) {
 	var newAcl Acl
-	if err := c.BindJSON(newAcl); err != nil {
+	if err := c.BindJSON(&newAcl); err != nil {
 		return
 	}
 	var db MongoDb
-	newAcl = *db.create(&newAcl)
+	db.create(&newAcl)
 	c.IndentedJSON(http.StatusCreated, newAcl)
 }
 
 func PutAcl(c *gin.Context) {
 	var updatedAcl Acl
-	if err := c.BindJSON(updatedAcl); err != nil {
+	if err := c.BindJSON(&updatedAcl); err != nil {
 		return
 	}
 	var db MongoDb
-	updatedAcl = *db.update(&updatedAcl)
+	db.update(&updatedAcl)
 	c.IndentedJSON(http.StatusAccepted, updatedAcl)
 }
 
