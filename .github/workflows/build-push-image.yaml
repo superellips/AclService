@@ -33,5 +33,5 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
           git add manifests/aclservice-deployment.yaml
-          git commit -m "Update webapp image to ${{ github.sha }}"
+          git commit -m "Updates image to ${{ github.sha }}"
           git push
