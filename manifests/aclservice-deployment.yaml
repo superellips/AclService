@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "aclservice-deployment"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "aclservice-app"
+  template:
+    metadata:
+      labels:
+        app: "aclservice-app"
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: aclservice-container
+        image: ghcr.io/superellips/aclservice:latest
+        resources:
+          limits:
+            cpu: "10"
+            memory: "100Mi"
+          requests:
+            cpu: "10 "
+            memory: "50Mi"
+        ports:
+        - containerPort: 8080
