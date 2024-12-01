@@ -17,13 +17,13 @@ spec:
       containers:
       - name: aclservice-container
         image: ghcr.io/superellips/aclservice:fd1d37097c66da95203bc6de7d15e2bab470f50a
-        resources:
-          limits:
-            cpu: "10"
-            memory: "100Mi"
-          requests:
-            cpu: "10 "
-            memory: "50Mi"
+        # resources:
+        #   limits:
+        #     cpu: "10"
+        #     memory: "100Mi"
+        #   requests:
+        #     cpu: "10 "
+        #     memory: "50Mi"
         ports:
         - containerPort: 8080
         envFrom: 
