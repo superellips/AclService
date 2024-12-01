@@ -26,7 +26,7 @@ jobs:
 
       - name: Update manifests
         run: |
-          sed -i 's|ghcr\.io/${{ secrets.GHCR_USERNAME}}/aclservice:.*|ghcr\.io/${{ secrets.GHCR_USERNAME}}/aclservice:${{ github.sha }}' ./manifests/aclservice-deployment.yaml
+          sed -i 's|ghcr\\.io/${{ secrets.GHCR_USERNAME}}/aclservice:.*|ghcr\\.io/${{ secrets.GHCR_USERNAME}}/aclservice:${{ github.sha }}' ./manifests/aclservice-deployment.yaml
 
       - name: Commit and push updated manifests
         run: |
