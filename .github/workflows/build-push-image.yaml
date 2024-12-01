@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker build -t ghcr.io/${{ secrets.GHCR_USERNAME }}/aclservice:${{ github.sha }}
+          docker build -t ghcr.io/${{ secrets.GHCR_USERNAME }}/aclservice:${{ github.sha }} .
           docker push -t ghcr.io/${{ secrets.GHCR_USERNAME }}/aclservice:${{ github.sha }}
 
       - name: Update manifests
