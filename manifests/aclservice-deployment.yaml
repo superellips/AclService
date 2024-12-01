@@ -16,7 +16,7 @@ spec:
       - name: regcred
       containers:
       - name: aclservice-container
-        image: ghcr.io/superellips/aclservice:eb1c8e2641bd77c28fee810681f440300c3ef91c
+        image: ghcr.io/superellips/aclservice:fd1d37097c66da95203bc6de7d15e2bab470f50a
         resources:
           limits:
             cpu: "10"
