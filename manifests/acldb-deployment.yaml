@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: acldb
+spec:
+  selector:
+    matchLabels:
+      app: acldb
+  replicas: 1
+  serviceName: acldb-service
+  template:
+    metadata:
+      labels:
+        app: acldb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: acldb-data
+          mountPath: /data/db
+  volumeClaimTemplates:
+  - metadata:
+      name: acldb-data
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Mi

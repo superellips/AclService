@@ -2,15 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func main() {
-	var newAcl Acl
-	newAcl.GuestbookId = primitive.NewObjectID()
-	newAcl.UserId = primitive.NewObjectID()
-	var db MongoDb
-	db.create(&newAcl)
 	router := gin.Default()
 
 	router.GET("/api/version/acl/:aclId", GetAclById)
